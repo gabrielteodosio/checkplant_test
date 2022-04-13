@@ -20,7 +20,7 @@ class ApplicationController < ActionController::API
 
   # set Devise's current_user using decoded JWT instead of session
   def current_user
-    @current_user ||= super || User.find(@current_user_id)
+    @current_user = User.find(@current_user_id)
   end
 
   # check that authenticate_user has successfully returned @current_user_id (user is authenticated)

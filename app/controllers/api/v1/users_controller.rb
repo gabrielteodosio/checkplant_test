@@ -11,11 +11,4 @@
     end
   end
 
-  private
-  def current_user
-    jwt_payload = JWT.decode(request.headers['Authorization'].split().last, Rails.application.credentials.devise[:jwt_secret_key]).first
-    user_id = jwt_payload['sub']
-    user = User.find(user_id.to_s)
-  end
-
 end

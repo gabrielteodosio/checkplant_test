@@ -6,4 +6,7 @@ class User < ApplicationRecord
     JWT.encode({id: id, exp: 30.days.from_now.to_i}, Rails.application.credentials.devise[:jwt_secret_key])
   end
 
+  def valid_password?(password)
+    password == self.encrypted_password
+  end
 end

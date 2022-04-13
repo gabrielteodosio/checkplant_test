@@ -2,19 +2,19 @@
   respond_to :json
 
   def create
-    user = User.find_by_email(sign_in_params[:email])
+    user = User.find_by_email(params[:email])
 
-    if user && user.valid_password?(sign_in_params[:password])
+    if user && user.valid_password?(params[:password])
       token = user.generate_jwt
-      render json: { "user": user, "token": token }, status: :ok
+      render json: { user: user, token: token }, status: :ok
     else
-      render json: { "errors": "Invalid credentials" }, status: :unprocessable_entity
+      render json: { message: "Invalid credentials" }, status: :unprocessable_entity
     end
   end
 
   private
   def respond_with(resource, _opts = {})
-    render json: { message: 'Logged in successfully.' }, status: :ok
+    render json: { message: "Logged in successfully" }, status: :ok
   end
 
   def respond_to_on_destroy
@@ -24,7 +24,7 @@
   end
 
   def log_out_success
-    render json: { message: "Logged out successfully." }, status: :ok
+    render json: { message: "Logged out successfully" }, status: :ok
   end
 
   def log_out_failure
