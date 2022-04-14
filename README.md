@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Para fazer essa aplicação rodar, siga as instruções abaixo:
 
-Things you may want to cover:
+1. Instale a versão mais recente do Ruby e do framework Ruby on Rails;
+2. Clone o repositório do projeto;
+3. Execute o comando `bundle install` para baixar as dependencias do projeto;
+4. Altere o arquivo de configuração `config/database.yml` para as configurações de banco na sua máquina;
+5. Execute o comando `rake db:create` e `rake db:migrate` para criar o banco de desenvolvimento e realizar as migrações pendentes;
+6. Levante o servidor utilizando o comando `rails server`
 
-* Ruby version
+Pronto, seguindo este pequeno passo-a-passo a aplicação estará em completo funcionamento.
 
-* System dependencies
+Caso haja a necessidade de criar um novo arquivo `master.key`, favor buscar no Google.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Uma pequena documentação está anexada ao projeto, o nome do arquivo na raíz do projeto que contém tal documentação é o: `checkplant-api-doc.json`.
